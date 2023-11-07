@@ -1,0 +1,44 @@
+#include <iostream>
+using namespace std;
+
+int main() {
+	setlocale(0, "");
+	int day;
+
+	cout << "[1]Понедельник\n";
+	cout << "[2]Вторник\n";
+	cout << "[3]Среда\n";
+	cout << "[4]Четверг\n";
+	cout << "[5]Пятница\n";
+	cout << "[6]Суббота\n";
+	cout << "[7]Воскресенье\n";
+
+	cout << "\nВыберите день недели: ";
+	cin >> day;
+
+	switch (day)
+	{
+	case 1:
+		cout << "Баскетбол";
+		break;
+	case 2:
+		cout << "Учеба";
+		break;
+	case 3:
+		cout << "Погулять";
+		break;
+	case 4:
+		cout << "Сходить в поликлинику";
+		break;
+	case 5:
+		cout << "Посидеть за пк";
+		break;
+	case 6:
+		cout << "Погулять с подругой";
+		break;
+	case 7:
+		cout << "Заняться спортом";
+		break;
+	}
+	return 0;
+}	
