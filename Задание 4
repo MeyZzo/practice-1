@@ -1,0 +1,41 @@
+using namespace std;
+#include <iostream>
+#include <string>
+bool INValidPassword(const string& password)
+{
+    // Убедимся, что пароль длиннее 8 символов
+    if (password.length() < 8) {
+        return false;
+    }
+
+    // Проверим, что пароль состоит только из латинских букв верхнего и нижнего регистра,
+    // а также из допустимых символов ':', '!', '@', '#', '$', '%', '&', '*', '+', '?'
+    for (char c : password)
+    {
+        if (!((c >= 'A' && c <= 'Z') || (c >= 'a' && c <= 'z') ||
+            (c == ':' || c == '!' || c == '@' || c == '#' || c == '$' ||
+                c == '%' || c == '&' || c == '*' || c == '+' || c == '?'))) {
+            return false;
+        }
+    }
+
+    return true;
+}
+
+
+
+int main() {
+    setlocale(0, "");
+    string password;
+    cout << "Введите пароль: ";
+    cin >> password;
+
+    if (INValidPassword(password)) {
+        cout << "Пароль создан." << endl;
+    }
+    else {
+        cout << "Пароль недопустим." << endl;
+    }
+
+    return 0;
+}
